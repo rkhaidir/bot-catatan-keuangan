@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: telegram-finance-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: SPREADSHEET_ID
+        sync: false
+      - key: GOOGLE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: TIMEZONE
+        value: Asia/Makassar
+      - key: ALLOWED_USER_IDS
+        sync: false
